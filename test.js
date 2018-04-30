@@ -13,10 +13,19 @@ describe('Load a Page', function() {
   describe('/ (Home Page)', () => {
     it('should load without error', done => {
       // your actual testing urls will likely be `http://localhost:port/path`
-      nightmare.goto('https://google.com')
+      nightmare.goto('https://www.bbc.co.uk/')
         .end()
         .then(function (result) { done() })
         .catch(done)
     })
   })
+  describe('/auth (Login Page)', () => {
+    it('should load without error',  done => {
+      nightmare.goto('https://www.bbc.co.uk/signin')
+        .end()
+        .then(result => { done() })
+        .catch(done)
+    })
+  })
+
 })
